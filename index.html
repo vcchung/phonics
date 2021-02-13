@@ -34,9 +34,6 @@
             color: red;
         }
 
-        #random {
-            margin-top: 20px;
-        }
 
         .container{
             position: relative;
@@ -54,17 +51,24 @@
             background-size: cover;
         }
        
+       .next-random-buttons{
+           margin-top: 20px;
+       }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="welcome">Welcome Janice!</h1>
+        <h1 class="welcome d-flex justify-content-center">Welcome Janice!</h1>
         <select class="form-select" aria-label="Prefix" id="prefix">
         </select>
         <select class="form-select" aria-label="Postfix" id="postfix">
         </select>
-        <button id="random" type="button" class="btn btn-primary">Random</button>
+        <div class="d-flex justify-content-between next-random-buttons">
+            <button id="next" type="button" class="btn btn-primary">Next</button>
+            <button id="random" type="button" class="btn btn-info">Random</button>
+        </div>
+        
         <div class="content d-flex justify-content-center align-items-center">
             <span id="pre-content"></span><span id="post-content"></span>
         </div>
@@ -169,6 +173,12 @@
             options[Math.floor(Math.random() * options.length)].selected = true
             updateContent()
         });
+
+        $('#next').on('click', function(event){
+            event.preventDefault();
+            $('#prefix option:selected').next().attr('selected', 'selected');
+            updateContent()
+        })
 
         $(document).ready(function () {
             $('#gif').hide();
