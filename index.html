@@ -33,24 +33,6 @@
         #wrongCount {
             color: red;
         }
-
-
-        .container{
-            position: relative;
-            z-index:1;
-            overflow:hidden; /*if you want to crop the image*/
-        }
-        .container:before{
-            z-index:-1;
-            position:absolute;
-            left:20%;
-            top:20%;
-            content: url('http://2.bp.blogspot.com/-el-sZzOZpmY/Ux_LwY4fCXI/AAAAAAACe6o/GzLJLFPt64g/s1600/elsasnowflakes2.png'); 
-            opacity:0.2;
-            transform: scale(1.5);
-            background-size: cover;
-        }
-       
        .next-random-buttons{
            margin-top: 20px;
        }
@@ -65,7 +47,8 @@
         <select class="form-select" aria-label="Postfix" id="postfix">
         </select>
         <div class="d-flex justify-content-between next-random-buttons">
-            <button id="next" type="button" class="btn btn-primary">Next</button>
+            <button id="next-prefix" type="button" class="btn btn-primary">Next Prefix</button>
+            <button id="next-postfix" type="button" class="btn btn-primary">Next Postfix</button>
             <button id="random" type="button" class="btn btn-info">Random</button>
         </div>
         
@@ -174,9 +157,14 @@
             updateContent()
         });
 
-        $('#next').on('click', function(event){
+        $('#next-prefix').on('click', function(event){
             event.preventDefault();
             $('#prefix option:selected').next().attr('selected', 'selected');
+            updateContent()
+        })
+        $('#next-postfix').on('click', function(event){
+            event.preventDefault();
+            $('#postfix option:selected').next().attr('selected', 'selected');
             updateContent()
         })
 
