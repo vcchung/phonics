@@ -37,6 +37,23 @@
         #random {
             margin-top: 20px;
         }
+
+        .container{
+            position: relative;
+            z-index:1;
+            overflow:hidden; /*if you want to crop the image*/
+        }
+        .container:before{
+            z-index:-1;
+            position:absolute;
+            left:20%;
+            top:20%;
+            content: url('http://2.bp.blogspot.com/-el-sZzOZpmY/Ux_LwY4fCXI/AAAAAAACe6o/GzLJLFPt64g/s1600/elsasnowflakes2.png'); 
+            opacity:0.2;
+            transform: scale(1.5);
+            background-size: cover;
+        }
+       
     </style>
 </head>
 
@@ -112,7 +129,16 @@
                 "https://i.gifer.com/WPi0.gif",
                 "https://i.gifer.com/ohE.gif",
                 "https://i.gifer.com/3pZC.gif",
-                "https://i.gifer.com/3K26.gif"
+                "https://i.gifer.com/3K26.gif",
+                "https://i.gifer.com/1vZ.gif",
+                "https://i.gifer.com/2J4J.gif",
+                "https://i.gifer.com/10IR.gif",
+                "https://i.gifer.com/2WLq.gif",
+                "https://i.gifer.com/HNT9.gif",
+                "https://i.gifer.com/3fBd.gif",
+                "https://i.gifer.com/EeZD.gif",
+                "https://i.gifer.com/CbhV.gif",
+                "https://i.gifer.com/9F6a.gif"
                 
             ]
             // var rand=Math.floor(Math.random() * gifs.length);
